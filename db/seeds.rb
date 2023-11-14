@@ -4,7 +4,7 @@ password = Faker::Alphanumeric.alpha(number: 8),
 title = Faker::ProgrammingLanguage.name
 contents = Faker::Quotes::Shakespeare.romeo_and_juliet_quote
 
-5.time do
+5.times do
   user = User.create!(
     name: name,
     email: email,
