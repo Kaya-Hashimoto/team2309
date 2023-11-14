@@ -10,6 +10,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <ul>
+    <% if logged_in? %>
+      <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
+      <li><%= link_to 'ログアウト', session_path(current_user.id), method: :delete %></li>
+    <% else %>
+      <li><%= link_to 'サインアップ', new_user_path %></li>
+      <li><%= link_to 'ログイン', new_session_path %></li>
+    <% end %>
+  </ul>
+  
   <body>
     <%= yield %>
   </body>
